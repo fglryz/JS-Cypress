@@ -2,7 +2,7 @@
 
 
 
-describe('context:my fort test',()=>{
+describe('context:my first test',()=>{
 before(() => {
     //runs once before al test cases in this decsrine block,like beforeClass in 
     //test NG    
