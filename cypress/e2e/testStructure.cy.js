@@ -27,5 +27,14 @@ it('Opening web aplication',()=>{
 
 
 })
+it('Test2 ',()=>{
+  expect(false).to.equal(false);
+})
+it("Test3 ", () => {
+  expect(false).not.to.equal(true);
+});
+it("Test4 ", () => {
+  expect(5).to.equal('4'==4);
+});
 
 })
