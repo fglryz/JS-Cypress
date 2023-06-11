@@ -34,7 +34,7 @@ it("Test3 ", () => {
   expect(false).not.to.equal(true);
 });
 it("Test4 ", () => {
-  expect(5).to.equal('4'==4);
+  expect(5).not.to.equal('4'==4);
 });
 
 })

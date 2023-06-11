@@ -48,8 +48,8 @@ it("Check diffrent type of assertions", () => {
   cy.get('#wooden_spoon')
   .should('contain','Login').and('have.class','btn btn-primary');
   cy.get("#wooden_spoon").then((buttonElement)=>{
-    expext(buttonElement).to.have.text('Login');
-    expext(buttonElement).to.have.class('btn btn-primary');
+    expect(buttonElement).to.have.text('Login');
+    expect(buttonElement).to.have.class('btn btn-primary');
 
 
   });
