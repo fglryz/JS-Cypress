@@ -70,7 +70,7 @@ describe('Find or get locators', () => {
       // I will get all buttons like previous approach,get only the item then check for text of each item,if it is equal to Button 4,then click on it
       cy.get('button').each((item, index, list) => {
         // assert length of the list ,verify number of buttons
-        if (item.text() == ' Button 4') {
+        if (item.text() ===' Button 4') {
           cy.log(item.text());
           // item.click() you can not use cypress click function on jQuary element
 
@@ -79,6 +79,6 @@ describe('Find or get locators', () => {
         }
       });
     });
-    //npx cypress run --headless -b chrome
+    // npx cypress run --headless -b chrome
   });
 });

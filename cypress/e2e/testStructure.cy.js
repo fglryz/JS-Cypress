@@ -29,6 +29,6 @@ describe('context:my fort test', () => {
     expect(false).not.to.equal(true);
   });
   it('Test4 ', () => {
-    expect(5).to.equal('4' == 4);
+    expect(5).to.equal('4' === 4);
   });
 });
