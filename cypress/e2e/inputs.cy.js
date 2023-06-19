@@ -27,7 +27,7 @@ describe('Input.Form.Tests', () => {
     cy.get("input[name='birthday']").type('01/01/1999');
   });
 
-  it.only('Check different radio buttons ', () => {
+  it.skip('Check different radio buttons ', () => {
     cy.get('.radio')
       .find('[type=radio]')
       .then((radio) => {
@@ -47,4 +47,49 @@ describe('Input.Form.Tests', () => {
         cy.wrap(radio).eq(2).should('not.be.checked');
       });
   });
+
+it.skip('Check different checkbox actions', () => {
+//get all checkbox,select Java and verify
+cy.get('[type="checkbox"]').then((checkbox)=>{
+
+cy.wrap(checkbox).eq(1).check().should('be.checked');
+//unchek JAva
+cy.wrap(checkbox).eq(1).uncheck().should('not.be.checked');
+//verify 3rd one has a value javascript 
+cy.wrap(checkbox).eq(2).should('have.value','javascript').check().should('be.checked');
+
+})
+
+})
+it.skip('checked selection of a single ', () => {
+  //select one element
+cy.get('select[name="job_title"]').select("SDET");
+//assert that dropdow has correct text
+cy.get('select[name="job_title"]').contains('SDET');
+
 });
+it('checked selection of select dropdown options',()=>{
+  //we will provide our test data through fixtures folder as Json
+cy.fixture('departments').then((departments) => {
+  //get all options in the menu,iterate through these options one by one 
+  cy.get('select[name="department"] > option').each ((option,index) => {
+//get each text
+    const optionText=option.text();
+//cy.log(optionText)
+//cy.log(index);
+//cy.log(departments[index]);
+
+cy.get('select[name="department"]')
+  .select(optionText)
+  .should('have.value', option.val())
+  .contains(departments[index]);
+  
+
+        })
+
+      })
+
+     });
+
+
+  });
